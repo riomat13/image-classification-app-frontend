@@ -1,0 +1,27 @@
+{
+    "plugins": ["react", "jest"],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
+    "parser": "babel-parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "semi": "error",
+        "quotes": ["error", "single", {"avoidEscape": true}],
+        "comma-dangle": ["error", "always-multiline"]
+    },
+    "settings": {
+        "react": {
+            "version": "16.13.1"
+        }
+    }
+}

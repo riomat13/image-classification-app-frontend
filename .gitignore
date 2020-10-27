@@ -1,0 +1,20 @@
+# library
+node_modules/
+
+# build
+dist/
+
+# development
+coverage/
+data/
+logs/
+img/
+
+# env files
+.env*
+
+# miscellaneous
+favicon*
+manifest.json
+robots.txt
+*.png
