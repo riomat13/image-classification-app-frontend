@@ -18,7 +18,7 @@ const Playground = () => {
       <Divider bottom={30} />
       <P>Try out the prediction model to classify dog breed.</P>
       <Div>
-        <Prediction />
+        <Prediction model_type="dog_breed" />
       </Div>
     </ContentDiv>
   );

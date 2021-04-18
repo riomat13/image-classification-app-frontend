@@ -18,7 +18,7 @@ describe('Prediction()', () => {
 
   /** Create component in a state where an image is uploaded */
   const setupComponentWithImage = async () => {
-    const wrapper = mount(<Prediction />);
+    const wrapper = mount(<Prediction model_type="dog_breed" />);
 
     await act(async () => {
       // upload image
@@ -37,7 +37,7 @@ describe('Prediction()', () => {
   };
 
   it('render component in initial state', () => {
-    const wrapper = shallow(<Prediction />);
+    const wrapper = shallow(<Prediction model_type="dog_breed" />);
     checkInitialState(wrapper);
   });
 

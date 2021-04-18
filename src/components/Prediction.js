@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Alert, Button } from 'antd';
@@ -34,7 +35,7 @@ const RetryBtn = styled.div`
   margin-top: 40px;
 `;
 
-export const Prediction = () => {
+export const Prediction = (props) => {
   const [error, setError] = useState();
   const [predicting, setPredicting] = useState(false);
   const [img, setImg] = useState();
@@ -53,7 +54,7 @@ export const Prediction = () => {
     setPredicting(true);
     setError();
 
-    uploadImage({ url: '/prediction/serve', file: img })
+    uploadImage({ url: `/prediction/${props.model_type}/serve`, file: img })
       .then((resp) => {
         setPredicting(false);
         setResult(resp.data.result);
@@ -125,4 +126,7 @@ export const Prediction = () => {
   );
 };
 
+Prediction.propTypes = {
+  model_type: PropTypes.string.isRequired,
+};
 Prediction.displayName = 'Prediction';
